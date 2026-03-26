@@ -31,6 +31,9 @@ const Activities = () => {
                 <th>Type</th>
                 <th>Duration (min)</th>
                 <th>Date</th>
+                <th>Description</th>
+                <th>Schedule</th>
+                <th>Max Attendance</th>
               </tr>
             </thead>
             <tbody>
@@ -38,9 +41,12 @@ const Activities = () => {
                 <tr key={activity._id || idx}>
                   <td>{activity.id || activity._id || '-'}</td>
                   <td>{activity.user || activity.user_id || '-'}</td>
-                  <td>{activity.type || '-'}</td>
+                  <td>{activity.activity_type || activity.type || '-'}</td>
                   <td>{activity.duration || '-'}</td>
                   <td>{activity.date || '-'}</td>
+                  <td>{activity.description || '-'}</td>
+                  <td>{activity.schedule || '-'}</td>
+                  <td>{activity.max_attendance != null ? activity.max_attendance : '-'}</td>
                 </tr>
               ))}
             </tbody>

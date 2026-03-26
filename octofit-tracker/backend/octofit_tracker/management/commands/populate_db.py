@@ -30,6 +30,15 @@ class Command(BaseCommand):
         activities = [
             Activity(user='ironman@marvel.com', activity_type='run', duration=30, date='2023-01-01'),
             Activity(user='batman@dc.com', activity_type='cycle', duration=45, date='2023-01-02'),
+            Activity(
+                user='club@octofit.com',
+                activity_type='Manga Maniacs',
+                duration=60,
+                date='2023-01-03',
+                description='Explore the fantastic stories of the most interesting characters from Japanese Manga (graphic novels).',
+                schedule='Tuesdays at 7pm',
+                max_attendance=15,
+            ),
         ]
         for activity in activities:
             activity.save()

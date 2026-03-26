@@ -18,9 +18,12 @@ class Team(models.Model):
 class Activity(models.Model):
     _id = models.ObjectIdField()
     user = models.CharField(max_length=100)
-    activity_type = models.CharField(max_length=50)
+    activity_type = models.CharField(max_length=100)
     duration = models.IntegerField()
     date = models.DateField()
+    description = models.TextField(blank=True, default='')
+    schedule = models.CharField(max_length=100, blank=True, default='')
+    max_attendance = models.IntegerField(null=True, blank=True)
     class Meta:
         db_table = 'activities'
 
