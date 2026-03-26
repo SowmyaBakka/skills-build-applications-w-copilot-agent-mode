@@ -16,6 +16,20 @@ class ActivityModelTest(TestCase):
         activity = Activity.objects.create(user='test@example.com', activity_type='run', duration=30, date='2023-01-01')
         self.assertEqual(activity.activity_type, 'run')
 
+    def test_create_manga_maniacs_activity(self):
+        activity = Activity.objects.create(
+            user='club@octofit.com',
+            activity_type='Manga Maniacs',
+            duration=60,
+            date='2023-01-03',
+            description='Explore the fantastic stories of the most interesting characters from Japanese Manga (graphic novels).',
+            schedule='Tuesdays at 7pm',
+            max_attendance=15,
+        )
+        self.assertEqual(activity.activity_type, 'Manga Maniacs')
+        self.assertEqual(activity.schedule, 'Tuesdays at 7pm')
+        self.assertEqual(activity.max_attendance, 15)
+
 class LeaderboardModelTest(TestCase):
     def test_create_leaderboard(self):
         leaderboard = Leaderboard.objects.create(user='test@example.com', score=100)
